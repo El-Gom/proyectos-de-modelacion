@@ -7,7 +7,6 @@
 #importar librerias importantes, aun que varias no sirven
 import math
 import csv
-from re import I
 import matplotlib.pyplot as plt
 import pandas as pd
 import os
@@ -20,7 +19,7 @@ colision2=bool
 #condiciones iniciales
 
 #Escoger el directorio donde se va a guardar el arcchivo .csv
-path = r"C:\Users\elchi\Desktop\proyectos-de-modelacion/hoja_de_calculo_rotacion_parabolas.csv"
+path = r"C:\Users\elchi\Desktop\proyectos-de-modelacion/hoja_de_calculo_rotacion_parabolas_para_graficar.csv"
 #assert os.path.isfile(path)
 x = 0.017
 y = .777
@@ -53,7 +52,7 @@ while i < 180:
     c1= (r*(math.cos(i)))
     c2= (r*(math.sin(i)))
     c3= (r2*(math.cos(i)))
-    c4= (r2*(math.sin(I)))
+    c4= (r2*(math.sin(i)))
 
     print("Coordenadas X de la tierra=",c1," ","Coordenadas Y de la tierra=", c2)
     print("Coordenadas X del cometa=",c3," ","Coordenadas Y del cometa=", c4)
@@ -62,19 +61,20 @@ while i < 180:
 
 
     #Checar si las magnitudes coincide, y como los anguloss son los mismos esto nos va a decir si estos puntos coinciden y por lo tanto si los 2 objetos chocan 
-    coord1=round(c1,3)
-    coord2=round(c3,3)
-    coord3=round(c2,3)
-    coord4=round(c4,3)
+    coord1=round(c1,2)
+    coord2=round(c3,2)
+    coord3=round(c2,2)
+    coord4=round(c4,2)
+    coord5=round(c1,2)
+    coord6=round(c3,2)
+    coord7=round(c2,2)
+    coord8=round(c4,2)
     if coord1 == coord2 and coord3 == coord4:
        
         colision = True
 
     if colision == True:
-        coord5=round(c1,3)
-        coord6=round(c3,3)
-        coord7=round(c2,3)
-        coord8=round(c4,3)
+
         if coord5 == coord6 and coord7 == coord8:
             colision2 == True
 
@@ -84,16 +84,5 @@ while i < 180:
        writer = csv.writer(f) 
        writer.writerows(data)
     #Este es el numero de iteraciones (O cuantos grados cambiamos) cada que realiza la operacion
-    i=i+.0001
+    i=i+.1
 i=0
-
-
-if colision == True:
-    print('los planetas se van a chocar en: ', coord1,' ', coord2,"               " ,coord3,' ', coord4,)
-    
-else:
-     print('no ps no')
-if colision2 == True:
-    print('los planetas se van a chocar tambien en: ', coord5,' ', coord6,"               " ,coord7,' ', coord8,)
-
-
