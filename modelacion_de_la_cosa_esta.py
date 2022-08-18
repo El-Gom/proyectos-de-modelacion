@@ -2,7 +2,7 @@
 # Kimberly Melgar Sanchez, Kirill Makienko Tkachenko, Luis Arturo Reinoso Borja y Samuel Miranda Alvarez
 # Para la materia de modelación de la ingenieria y algo más
 
-
+#simplemente agrego un comentario para ver qpd
 
 #importar librerias importantes, aun que varias no sirven
 import math
