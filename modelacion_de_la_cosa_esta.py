@@ -84,5 +84,5 @@ while i < 180:
        writer = csv.writer(f) 
        writer.writerows(data)
     #Este es el numero de iteraciones (O cuantos grados cambiamos) cada que realiza la operacion
-    i=i+.1
+    i=i+.001
 i=0
